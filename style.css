@@ -195,7 +195,7 @@ a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, bo
 }
 
 .booking-offer .offer[data-v-d3dec01a] {
-    background: url(images/IMG_6217.jpeg) no-repeat 50%;
+    background: url(images/IMG_6217.webp) no-repeat 50%;
     background-size: cover;
     height: 500px;
     width: 100%;
@@ -273,9 +273,11 @@ a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, bo
 }
 
 @media (max-width: 834px){
+
     .nav[data-v-792a7159] {
         position: relative;
     }
+    
     .nav .menu[data-v-792a7159] {
         z-index: 20;
         padding: 0;
@@ -284,18 +286,7 @@ a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, bo
         border-bottom: 0;
         position: relative;
     }
-    .nav .menu .mobile-menu[data-v-792a7159] {
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        position: absolute;
-        top: 73px;
-        left: 0;
-        height: calc(100vh - 73px);
-        width: 100vw;
-        background: #fff;
-        transition: width 0.5s;
-    }
+
     .nav .menu .mobile-menu li[data-v-792a7159] {
         padding: 20px 0;
         width: 100%;
@@ -304,6 +295,14 @@ a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, bo
     }
     .nav .menu .desktop-menu[data-v-792a7159] {
         display: none;
+    }
+    .nav .info[data-v-792a7159] {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        background: #fff;
+        z-index: 20;
     }
     .nav .info .menu-func[data-v-792a7159] {
         display: flex;
@@ -333,9 +332,7 @@ a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, bo
         font-size: 35px!important;
     }
 
-    #mobilebox{
-        display: none;
-    }
+   
 
     .text {
         font-size: 18px;
@@ -348,9 +345,6 @@ a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, bo
 } 
 
 @media (max-width: 480px){
-    .fs-6-S {
-        font-size: 1.5rem;
-    }
     .h1 {
         font-size: 28px!important;
     }
@@ -369,5 +363,52 @@ a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, bo
         padding-top: 0.5rem;
         padding-bottom: 0.5rem;
     }
-}   
-  
+    .nav .info[data-v-792a7159] {
+        border-radius: 7px;
+        margin: 5px;
+        width: calc(100% - 10px);
+        box-shadow: 0 5px 29px rgba(97,97,97,.25);
+    }
+
+    .nav .menu .mobile-menu li[data-v-792a7159] {
+        padding: 20px 0;
+    }
+}  
+
+@media screen and (max-width: 834px){
+    .nav .menu .mobile-menu[data-v-792a7159] {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        top: 73px;
+        left: 0;
+        height: calc(100vh - 73px);
+        width: 100vw;
+        background: #fff;
+        transform: translateY(-100%);
+        transition: transform 0.5s; 
+    } 
+
+    .menu .active[data-v-792a7159] {
+        transform: translateY(0);
+    }
+}
+
+@media screen and (max-width: 480px){
+    .nav .menu .mobile-menu[data-v-792a7159] {
+        height: 100vh;
+        top: 0;
+        padding-top: 73px;
+    }
+    
+}
+
+@media (min-width: 480px){
+    .fs-6-S {
+        font-size: 1.5rem;
+    }
+}
+
+
